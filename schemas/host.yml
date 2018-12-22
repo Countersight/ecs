@@ -63,3 +63,10 @@
       example: "x86_64"
       description: >
         Operating system architecture.
+
+    - name: interface
+      level: core
+      type: keyword
+      example: "eth0"
+      description: >
+        The interface that the event occurred on. 

@@ -291,6 +291,7 @@ A host is defined as a general computing instance. ECS host.* fields should be p
 | <a name="host.mac"></a>host.mac | Host mac address. | core | keyword |  |
 | <a name="host.type"></a>host.type | Type of host.<br/>For Cloud providers this can be the machine type like `t2.medium`. If vm, this could be the container, for example, or other information meaningful in your environment. | core | keyword |  |
 | <a name="host.architecture"></a>host.architecture | Operating system architecture. | core | keyword | `x86_64` |
+| <a name="host.interface"></a>host.interface | The interface that the event occurred on. | core | keyword | `eth0` |
 
 
 ## <a name="http"></a> HTTP fields

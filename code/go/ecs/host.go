@@ -55,4 +55,7 @@ type Host struct {
 
 	// Operating system architecture.
 	Architecture string `ecs:"architecture"`
+
+	// The interface that the event occurred on.
+	Interface string `ecs:"interface"`
 }

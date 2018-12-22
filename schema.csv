@@ -84,6 +84,7 @@ group.name,keyword,extended,
 host.architecture,keyword,core,x86_64
 host.hostname,keyword,core,
 host.id,keyword,core,
+host.interface,keyword,core,eth0
 host.ip,ip,core,
 host.mac,keyword,core,
 host.name,keyword,core,

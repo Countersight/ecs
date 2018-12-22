@@ -853,6 +853,13 @@
           description: >
             Operating system architecture.
     
+        - name: interface
+          level: core
+          type: keyword
+          example: "eth0"
+          description: >
+            The interface that the event occurred on. 
+    
     - name: http
       title: HTTP
       group: 2
@@ -1615,6 +1622,42 @@
           description: >
             Password of the request.
     
+    - name: user_agent
+      title: User agent
+      group: 2
+      description: >
+        The user_agent fields normally come from a browser request. They often
+        show up in web service logs coming from the parsed user agent string.
+      type: group
+      fields:
+    
+        - name: original
+          level: extended
+          type: keyword
+          description: >
+            Unparsed version of the user_agent.
+          example: "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1"
+    
+        - name: name
+          level: extended
+          type: keyword
+          example: Safari
+          description: >
+            Name of the user agent.
+        - name: version
+          level: extended
+          type: keyword
+          description: >
+            Version of the user agent.
+          example: 12.0
+    
+        - name: device.name
+          level: extended
+          type: keyword
+          example: iPhone
+          description: >
+            Name of the device.
+    
     - name: user
       title: User
       group: 2
@@ -1675,39 +1718,3 @@
           description: >
             Group the user is a part of. This field can contain a list of groups, if
             necessary.
-    
-    - name: user_agent
-      title: User agent
-      group: 2
-      description: >
-        The user_agent fields normally come from a browser request. They often
-        show up in web service logs coming from the parsed user agent string.
-      type: group
-      fields:
-    
-        - name: original
-          level: extended
-          type: keyword
-          description: >
-            Unparsed version of the user_agent.
-          example: "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1"
-    
-        - name: name
-          level: extended
-          type: keyword
-          example: Safari
-          description: >
-            Name of the user agent.
-        - name: version
-          level: extended
-          type: keyword
-          description: >
-            Version of the user agent.
-          example: 12.0
-    
-        - name: device.name
-          level: extended
-          type: keyword
-          example: iPhone
-          description: >
-            Name of the device.
