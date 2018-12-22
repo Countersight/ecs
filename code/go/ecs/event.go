@@ -90,6 +90,12 @@ type Event struct {
 	// searched, but it can be retrieved from `_source`.
 	Original string `ecs:"original"`
 
+	// A copy of the entire original event (fields and all),  whereas original
+	// stores a copy of the message itself.
+	// This field is not indexed and doc_values are disabled. It cannot be
+	// searched, but it can be retrieved from `_source`.
+	Raw string `ecs:"raw"`
+
 	// Hash (perhaps logstash fingerprint) of raw field to be able to
 	// demonstrate log integrity.
 	Hash string `ecs:"hash"`

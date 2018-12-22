@@ -121,6 +121,23 @@
       index: false
       doc_values: false
 
+    - name: raw
+      level: core
+      type: keyword
+      example: "Sep 19 08:26:10 host CEF:0&#124;Security&#124;
+          threatmanager&#124;1.0&#124;100&#124;
+          worm successfully stopped&#124;10&#124;src=10.0.0.1
+          dst=2.1.2.2spt=1232"
+      description: >
+          A copy of the entire original event (fields and all), 
+          whereas original stores a copy of the message itself. 
+
+          This field is not indexed and doc_values are disabled. It cannot be
+          searched, but it can be retrieved from `_source`.
+
+      index: false
+      doc_values: false
+
     - name: hash
       level: extended
       type: keyword
