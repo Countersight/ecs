@@ -644,6 +644,10 @@
             }
           }
         },
+        "processing_messages": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        },
         "related": {
           "properties": {
             "ip": {

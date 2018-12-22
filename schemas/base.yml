@@ -26,6 +26,13 @@
       description: >
         List of keywords used to tag each event.
 
+    - name: processing_messages
+      level: core
+      type: keyword
+      example: "[\"preprocess_beats\", \"identify_format\"]"
+      description: >
+        List of filters that processed this event
+
     - name: labels
       level: core
       type: object

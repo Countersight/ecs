@@ -35,6 +35,9 @@ type Base struct {
 	// List of keywords used to tag each event.
 	Tags string `ecs:"tags"`
 
+	// List of filters that processed this event
+	ProcessingMessages string `ecs:"processing_messages"`
+
 	// Key/value pairs.
 	// Can be used to add meta information to events. Should not contain nested
 	// objects. All values are stored as keyword.

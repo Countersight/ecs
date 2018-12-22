@@ -84,6 +84,7 @@ The base set contains all fields which are on the top level. These fields are co
 |---|---|---|---|---|
 | <a name="@timestamp"></a>@timestamp | Date/time when the event originated.<br/>For log events this is the date/time when the event was generated, and not when it was read.<br/>Required field for all events. | core | date | `2016-05-23T08:05:34.853Z` |
 | <a name="tags"></a>tags | List of keywords used to tag each event. | core | keyword | `["production", "env2"]` |
+| <a name="processing_messages"></a>processing_messages | List of filters that processed this event | core | keyword | `["preprocess_beats", "identify_format"]` |
 | <a name="labels"></a>labels | Key/value pairs.<br/>Can be used to add meta information to events. Should not contain nested objects. All values are stored as keyword.<br/>Example: `docker` and `k8s` labels. | core | object | `{'application': 'foo-bar', 'env': 'production'}` |
 | <a name="message"></a>message | For log events the message field contains the log message.<br/>In other use cases the message field can be used to concatenate different values which are then freely searchable. If multiple messages exist, they can be combined into one message. | core | text | `Hello World` |
 
