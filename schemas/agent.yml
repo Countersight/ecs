@@ -34,6 +34,14 @@
         If no name is given, the name is often left empty.
       example: foo
 
+    - name: hostname
+      level: core
+      type: keyword
+      description: >
+        Hostname of the agent.
+
+      example: host.example.com
+
     - name: type
       level: core
       type: keyword

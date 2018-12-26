@@ -5,6 +5,7 @@ message,text,core,Hello World
 processing_messages,keyword,core,"[""preprocess_beats"", ""identify_format""]"
 tags,keyword,core,"[""production"", ""env2""]"
 agent.ephemeral_id,keyword,extended,8a4f500f
+agent.hostname,keyword,core,host.example.com
 agent.id,keyword,core,8a4f500d
 agent.name,keyword,core,foo
 agent.type,keyword,core,filebeat

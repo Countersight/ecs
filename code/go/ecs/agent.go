@@ -36,6 +36,9 @@ type Agent struct {
 	// If no name is given, the name is often left empty.
 	Name string `ecs:"name"`
 
+	// Hostname of the agent.
+	Hostname string `ecs:"hostname"`
+
 	// Type of the agent.
 	// The agent type stays always the same and should be given by the agent
 	// used. In case of Filebeat the agent would always be Filebeat also if two
