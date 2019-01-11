@@ -376,14 +376,12 @@
       title: DNS
       group: 2
       description: >
-        DNS-specific event fields.
-        This is NOT YET PART OF THE OFFICIAL ECS
+        DNS-specific event fields.This is NOT YET PART OF THE OFFICIAL ECS<br/>
         This schema has been taken from an open PR for DNS fields against the ECS 
-        See https://github.com/elastic/ecs/pull/180 
-        Fingers crossed it makes it in unmodified 
-        The ecs does not support keyword values, so in the interim, I'll change the keywords (flags) 
-        To be keyword, where we can add 'true' or 'false' 
-        I had to make a few modifications from the PR that guy created. 
+        See https://github.com/elastic/ecs/pull/180 <br/>
+        The ecs does not support boolean values, so in the interim, I'll change the booleans (flags) 
+        to be keyword, where we can add 'true' or 'false'.
+        I had to make a few modifications from the PR.
           - removed the phase entries
           - added a type to a bunch of entries that were missing types
           - removed all of the 'type: object' entries

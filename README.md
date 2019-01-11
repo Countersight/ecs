@@ -178,7 +178,7 @@ Destination fields describe details about the destination of a packet/event. Des
 
 ## <a name="dns"></a> DNS fields
 
-DNS-specific event fields. This is NOT YET PART OF THE OFFICIAL ECS This schema has been taken from an open PR for DNS fields against the ECS  See https://github.com/elastic/ecs/pull/180  Fingers crossed it makes it in unmodified  The ecs does not support keyword values, so in the interim, I'll change the keywords (flags)  To be keyword, where we can add 'true' or 'false'  I had to make a few modifications from the PR that guy created. 
+DNS-specific event fields.This is NOT YET PART OF THE OFFICIAL ECS<br/> This schema has been taken from an open PR for DNS fields against the ECS  See https://github.com/elastic/ecs/pull/180 <br/> The ecs does not support boolean values, so in the interim, I'll change the booleans (flags)  to be keyword, where we can add 'true' or 'false'. I had to make a few modifications from the PR.
 
   - removed the phase entries
 
