@@ -434,7 +434,7 @@
     "type": "group"
   }, 
   "dns": {
-    "description": "DNS-specific event fields.\n", 
+    "description": "DNS-specific event fields. This is NOT YET PART OF THE OFFICIAL ECS This schema has been taken from an open PR for DNS fields against the ECS  See https://github.com/elastic/ecs/pull/180  Fingers crossed it makes it in unmodified  The ecs does not support keyword values, so in the interim, I'll change the keywords (flags)  To be keyword, where we can add 'true' or 'false'  I had to make a few modifications from the PR that guy created. \n  - removed the phase entries\n  - added a type to a bunch of entries that were missing types\n  - removed all of the 'type: object' entries\n", 
     "fields": {
       "dns.additionals.class": {
         "description": "The class of DNS data contained in this resource record.", 

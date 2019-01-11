@@ -19,7 +19,15 @@
 
 package ecs
 
-// DNS-specific event fields.
+// DNS-specific event fields. This is NOT YET PART OF THE OFFICIAL ECS This
+// schema has been taken from an open PR for DNS fields against the ECS  See
+// https://github.com/elastic/ecs/pull/180  Fingers crossed it makes it in
+// unmodified  The ecs does not support keyword values, so in the interim, I'll
+// change the keywords (flags)  To be keyword, where we can add 'true' or
+// 'false'  I had to make a few modifications from the PR that guy created.
+//   - removed the phase entries
+//   - added a type to a bunch of entries that were missing types
+//   - removed all of the 'type: object' entries
 type Dns struct {
 	// The DNS packet identifier assigned by the program that generated the
 	// query. The identifier is copied to the response.
