@@ -182,6 +182,164 @@
             }
           }
         },
+        "dns": {
+          "properties": {
+            "additionals": {
+              "properties": {
+                "class": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "data": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "ttl": {
+                  "type": "long"
+                },
+                "type": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
+            "additionals_count": {
+              "type": "long"
+            },
+            "answers": {
+              "properties": {
+                "class": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "data": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "ttl": {
+                  "type": "long"
+                },
+                "type": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
+            "answers_count": {
+              "type": "long"
+            },
+            "authorities": {
+              "properties": {
+                "class": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "type": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
+            "authorities_count": {
+              "type": "long"
+            },
+            "flags": {
+              "properties": {
+                "authentic_data": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "authoritative": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "checking_disabled": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "recursion_available": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "recursion_desired": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "truncated_response": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
+            "id": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "op_code": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "opt": {
+              "properties": {
+                "do": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "ext_rcode": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "udp_size": {
+                  "type": "long"
+                },
+                "version": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
+            "question": {
+              "properties": {
+                "class": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "etld_plus_one": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "name": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "size": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "type": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            },
+            "response_code": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
+        },
         "ecs": {
           "properties": {
             "version": {

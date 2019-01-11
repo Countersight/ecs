@@ -1,0 +1,244 @@
+# This schema has been taken from an open PR for DNS fields against the ECS 
+# See https://github.com/elastic/ecs/pull/180 
+# Fingers crossed it makes it in unmodified 
+# The ecs does not support keyword values, so in the interim, I'll change the keywords (flags) 
+# To be keyword, where we can add 'true' or 'false' 
+# I had to make a few modifications from the PR that guy created. 
+#   - removed the phase entries
+#   - added a type to a bunch of entries that were missing types
+#   - removed all of the  type: object entries
+---
+- name: dns
+  title: DNS
+  group: 2
+  description: >
+    DNS-specific event fields.
+  type: group
+  fields:
+
+    - name: id
+      level: extended
+      type: keyword
+      description: >
+        The DNS packet identifier assigned by the program that generated the
+        query. The identifier is copied to the response.
+
+    - name: op_code
+      level: extended
+      type: keyword
+      description: >
+        The DNS operation code that specifies the kind of query in the message.
+        This value is set by the originator of a query and copied into the
+        response.
+      example: QUERY
+
+    - name: flags.authoritative
+      level: extended
+      type: keyword
+      description: >
+        A DNS flag specifying that the responding server is an authority for
+        the domain name used in the question.
+
+    - name: flags.recursion_available
+      level: extended
+      type: keyword
+      description: >
+        A DNS flag specifying whether recursive query support is available in the
+        name server.
+
+    - name: flags.recursion_desired
+      level: extended
+      type: keyword
+      description: >
+        A DNS flag specifying that the client directs the server to pursue a
+        query recursively. Recursive query support is optional.
+
+    - name: flags.authentic_data
+      level: extended
+      type: keyword
+      description: >
+        A DNS flag specifying that the recursive server considers the response
+        authentic.
+
+    - name: flags.checking_disabled
+      level: extended
+      type: keyword
+      description: >
+        A DNS flag specifying that the client disables the server
+        signature validation of the query.
+
+    - name: flags.truncated_response
+      level: extended
+      type: keyword
+      description: >
+        A DNS flag specifying that only the first 512 bytes of the reply were
+        returned.
+
+    - name: response_code
+      level: extended
+      type: keyword
+      description: The DNS status code.
+      example: NOERROR
+
+    - name: question.name
+      level: core
+      type: keyword
+      description: >
+        The domain name being queried. If the name field contains non-printable
+        characters (below 32 or above 126), then those characters are represented
+        as escaped base 10 integers (\DDD). Back slashes and quotes are escaped.
+        Tabs, carriage returns, and line feeds are converted to \t, \r, and
+        \n respectively.
+      example: www.google.com.
+
+    - name: question.type
+      level: core
+      type: keyword
+      description: The type of records being queried.
+      example: AAAA
+
+    - name: question.class
+      level: core
+      type: keyword
+      description: The class of of records being queried.
+      example: IN
+
+    - name: question.etld_plus_one
+      level: core
+      type: keyword
+      description: The effective top-level domain (eTLD) plus one more label.
+        For example, the eTLD+1 for "foo.bar.golang.org." is "golang.org.".
+        The data for determining the eTLD comes from an embedded copy of the
+        data from http://publicsuffix.org.
+      example: amazon.co.uk.
+
+    - name: question.size
+      level: extended
+      type: keyword
+      description: The size of name being queried (in bytes).
+
+    - name: answers_count
+      level: extended
+      type: long
+      description: >
+        The number of resource records contained in the `dns.answers` field.
+
+    - name: answers.name
+      level: extended
+      type: keyword
+      description: The domain name to which this resource record pertains.
+      example: example.com.
+
+    - name: answers.type
+      level: extended
+      type: keyword
+      description: The type of data contained in this resource record.
+      example: MX
+
+    - name: answers.class
+      level: extended
+      type: keyword
+      description: The class of DNS data contained in this resource record.
+      example: IN
+
+    - name: answers.ttl
+      level: extended
+      type: keyword
+      description: >
+        The time interval in seconds that this resource record may be cached
+        before it should be discarded. Zero values mean that the data should
+        not be cached.
+      type: long
+
+    - name: answers.data
+      level: extended
+      type: keyword
+      description: >
+        The data describing the resource. The meaning of this data depends
+        on the type and class of the resource record.
+
+    - name: authorities_count
+      level: extended
+      type: long
+      description: >
+        The number of resource records contained in the `dns.authorities` field.
+
+    - name: authorities.name
+      level: extended
+      description: The domain name to which this resource record pertains.
+      example: example.com.
+      type: keyword
+
+    - name: authorities.type
+      level: extended
+      description: The type of data contained in this resource record.
+      example: NS
+      type: keyword
+
+    - name: authorities.class
+      level: extended
+      description: The class of DNS data contained in this resource record.
+      example: IN
+      type: keyword
+
+    - name: additionals_count
+      level: extended
+      type: long
+      description: >
+        The number of resource records contained in the `dns.additionals` field.
+
+    - name: additionals.name
+      level: extended
+      description: The domain name to which this resource record pertains.
+      example: example.com.
+      type: keyword
+
+    - name: additionals.type
+      level: extended
+      description: The type of data contained in this resource record.
+      example: NS
+      type: keyword
+
+    - name: additionals.class
+      level: extended
+      description: The class of DNS data contained in this resource record.
+      example: IN
+      type: keyword
+
+    - name: additionals.ttl
+      level: extended
+      description: >
+        The time interval in seconds that this resource record may be cached
+        before it should be discarded. Zero values mean that the data should
+        not be cached.
+      type: long
+
+    - name: additionals.data
+      type: keyword
+      level: extended
+      description: >
+        The data describing the resource. The meaning of this data depends
+        on the type and class of the resource record.
+
+    - name: opt.version
+      level: extended
+      description: The EDNS version.
+      example: "0"
+      type: keyword
+
+    - name: opt.do
+      level: extended
+      type: keyword
+      description: If set, the transaction uses DNSSEC.
+
+    - name: opt.ext_rcode
+      level: extended
+      description: Extended response code field.
+      example: "BADVERS"
+      type: keyword
+
+    - name: opt.udp_size
+      level: extended
+      type: long
+      description: Requestor's UDP payload size (in bytes).
+

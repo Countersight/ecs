@@ -12,6 +12,16 @@
         "required": false, 
         "type": "keyword"
       }, 
+      "agent.hostname": {
+        "description": "Hostname of the agent.", 
+        "example": "host.example.com", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "core", 
+        "name": "agent.hostname", 
+        "required": false, 
+        "type": "keyword"
+      }, 
       "agent.id": {
         "description": "Unique identifier of this agent (if one exists).\nExample: For Beats this would be beat.id.", 
         "example": "8a4f500d", 
@@ -90,6 +100,16 @@
         "name": "message", 
         "required": false, 
         "type": "text"
+      }, 
+      "processing_messages": {
+        "description": "List of filters that processed this event", 
+        "example": "[\"preprocess_beats\", \"identify_format\"]", 
+        "footnote": "", 
+        "group": 1, 
+        "level": "core", 
+        "name": "processing_messages", 
+        "required": false, 
+        "type": "keyword"
       }, 
       "tags": {
         "description": "List of keywords used to tag each event.", 
@@ -413,6 +433,355 @@
     "title": "Destination", 
     "type": "group"
   }, 
+  "dns": {
+    "description": "DNS-specific event fields.\n", 
+    "fields": {
+      "dns.additionals.class": {
+        "description": "The class of DNS data contained in this resource record.", 
+        "example": "IN", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.additionals.class", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.additionals.data": {
+        "description": "The data describing the resource. The meaning of this data depends on the type and class of the resource record.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.additionals.data", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.additionals.name": {
+        "description": "The domain name to which this resource record pertains.", 
+        "example": "example.com.", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.additionals.name", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.additionals.ttl": {
+        "description": "The time interval in seconds that this resource record may be cached before it should be discarded. Zero values mean that the data should not be cached.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.additionals.ttl", 
+        "required": false, 
+        "type": "long"
+      }, 
+      "dns.additionals.type": {
+        "description": "The type of data contained in this resource record.", 
+        "example": "NS", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.additionals.type", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.additionals_count": {
+        "description": "The number of resource records contained in the `dns.additionals` field.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.additionals_count", 
+        "required": false, 
+        "type": "long"
+      }, 
+      "dns.answers.class": {
+        "description": "The class of DNS data contained in this resource record.", 
+        "example": "IN", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.answers.class", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.answers.data": {
+        "description": "The data describing the resource. The meaning of this data depends on the type and class of the resource record.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.answers.data", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.answers.name": {
+        "description": "The domain name to which this resource record pertains.", 
+        "example": "example.com.", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.answers.name", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.answers.ttl": {
+        "description": "The time interval in seconds that this resource record may be cached before it should be discarded. Zero values mean that the data should not be cached.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.answers.ttl", 
+        "required": false, 
+        "type": "long"
+      }, 
+      "dns.answers.type": {
+        "description": "The type of data contained in this resource record.", 
+        "example": "MX", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.answers.type", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.answers_count": {
+        "description": "The number of resource records contained in the `dns.answers` field.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.answers_count", 
+        "required": false, 
+        "type": "long"
+      }, 
+      "dns.authorities.class": {
+        "description": "The class of DNS data contained in this resource record.", 
+        "example": "IN", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.authorities.class", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.authorities.name": {
+        "description": "The domain name to which this resource record pertains.", 
+        "example": "example.com.", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.authorities.name", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.authorities.type": {
+        "description": "The type of data contained in this resource record.", 
+        "example": "NS", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.authorities.type", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.authorities_count": {
+        "description": "The number of resource records contained in the `dns.authorities` field.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.authorities_count", 
+        "required": false, 
+        "type": "long"
+      }, 
+      "dns.flags.authentic_data": {
+        "description": "A DNS flag specifying that the recursive server considers the response authentic.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.flags.authentic_data", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.flags.authoritative": {
+        "description": "A DNS flag specifying that the responding server is an authority for the domain name used in the question.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.flags.authoritative", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.flags.checking_disabled": {
+        "description": "A DNS flag specifying that the client disables the server signature validation of the query.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.flags.checking_disabled", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.flags.recursion_available": {
+        "description": "A DNS flag specifying whether recursive query support is available in the name server.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.flags.recursion_available", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.flags.recursion_desired": {
+        "description": "A DNS flag specifying that the client directs the server to pursue a query recursively. Recursive query support is optional.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.flags.recursion_desired", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.flags.truncated_response": {
+        "description": "A DNS flag specifying that only the first 512 bytes of the reply were returned.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.flags.truncated_response", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.id": {
+        "description": "The DNS packet identifier assigned by the program that generated the query. The identifier is copied to the response.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.id", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.op_code": {
+        "description": "The DNS operation code that specifies the kind of query in the message. This value is set by the originator of a query and copied into the response.", 
+        "example": "QUERY", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.op_code", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.opt.do": {
+        "description": "If set, the transaction uses DNSSEC.", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.opt.do", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.opt.ext_rcode": {
+        "description": "Extended response code field.", 
+        "example": "BADVERS", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.opt.ext_rcode", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.opt.udp_size": {
+        "description": "Requestor's UDP payload size (in bytes).", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.opt.udp_size", 
+        "required": false, 
+        "type": "long"
+      }, 
+      "dns.opt.version": {
+        "description": "The EDNS version.", 
+        "example": "0", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.opt.version", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.question.class": {
+        "description": "The class of of records being queried.", 
+        "example": "IN", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "core", 
+        "name": "dns.question.class", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.question.etld_plus_one": {
+        "description": "The effective top-level domain (eTLD) plus one more label. For example, the eTLD+1 for \"foo.bar.golang.org.\" is \"golang.org.\". The data for determining the eTLD comes from an embedded copy of the data from http://publicsuffix.org.", 
+        "example": "amazon.co.uk.", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "core", 
+        "name": "dns.question.etld_plus_one", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.question.name": {
+        "description": "The domain name being queried. If the name field contains non-printable characters (below 32 or above 126), then those characters are represented as escaped base 10 integers (\\DDD). Back slashes and quotes are escaped. Tabs, carriage returns, and line feeds are converted to \\t, \\r, and \\n respectively.", 
+        "example": "www.google.com.", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "core", 
+        "name": "dns.question.name", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.question.size": {
+        "description": "The size of name being queried (in bytes).", 
+        "example": "", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.question.size", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.question.type": {
+        "description": "The type of records being queried.", 
+        "example": "AAAA", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "core", 
+        "name": "dns.question.type", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "dns.response_code": {
+        "description": "The DNS status code.", 
+        "example": "NOERROR", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "dns.response_code", 
+        "required": false, 
+        "type": "keyword"
+      }
+    }, 
+    "group": 2, 
+    "name": "dns", 
+    "title": "DNS", 
+    "type": "group"
+  }, 
   "ecs": {
     "description": "Meta-information specific to ECS.\n", 
     "fields": {
@@ -593,6 +962,16 @@
         "name": "event.outcome", 
         "required": false, 
         "type": "keyword"
+      }, 
+      "event.raw": {
+        "description": "A copy of the entire original event (fields and all),  whereas original stores a copy of the message itself. \nThis field is not indexed and doc_values are disabled. It cannot be searched, but it can be retrieved from `_source`.", 
+        "example": "Sep 19 08:26:10 host CEF:0&#124;Security&#124; threatmanager&#124;1.0&#124;100&#124; worm successfully stopped&#124;10&#124;src=10.0.0.1 dst=2.1.2.2spt=1232", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "core", 
+        "name": "event.raw", 
+        "required": false, 
+        "type": "(not indexed)"
       }, 
       "event.risk_score": {
         "description": "Risk score or priority of the event (e.g. security solutions). Use your system's original value here.", 
@@ -957,6 +1336,16 @@
         "group": 2, 
         "level": "core", 
         "name": "host.id", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "host.interface": {
+        "description": "The interface that the event occurred on.", 
+        "example": "eth0", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "core", 
+        "name": "host.interface", 
         "required": false, 
         "type": "keyword"
       }, 

@@ -53,6 +53,7 @@ ECS defines these fields.
  * [Cloud fields](#cloud)
  * [Container fields](#container)
  * [Destination fields](#destination)
+ * [DNS fields](#dns)
  * [ECS fields](#ecs)
  * [Error fields](#error)
  * [Event fields](#event)
@@ -173,6 +174,49 @@ Destination fields describe details about the destination of a packet/event. Des
 | <a name="destination.domain"></a>destination.domain | Destination domain. | core | keyword |  |
 | <a name="destination.bytes"></a>destination.bytes | Bytes sent from the destination to the source. | core | long | `184` |
 | <a name="destination.packets"></a>destination.packets | Packets sent from the destination to the source. | core | long | `12` |
+
+
+## <a name="dns"></a> DNS fields
+
+DNS-specific event fields.
+
+
+| Field  | Description  | Level  | Type  | Example  |
+|---|---|---|---|---|
+| <a name="dns.id"></a>dns.id | The DNS packet identifier assigned by the program that generated the query. The identifier is copied to the response. | extended | keyword |  |
+| <a name="dns.op_code"></a>dns.op_code | The DNS operation code that specifies the kind of query in the message. This value is set by the originator of a query and copied into the response. | extended | keyword | `QUERY` |
+| <a name="dns.flags.authoritative"></a>dns.flags.authoritative | A DNS flag specifying that the responding server is an authority for the domain name used in the question. | extended | keyword |  |
+| <a name="dns.flags.recursion_available"></a>dns.flags.recursion_available | A DNS flag specifying whether recursive query support is available in the name server. | extended | keyword |  |
+| <a name="dns.flags.recursion_desired"></a>dns.flags.recursion_desired | A DNS flag specifying that the client directs the server to pursue a query recursively. Recursive query support is optional. | extended | keyword |  |
+| <a name="dns.flags.authentic_data"></a>dns.flags.authentic_data | A DNS flag specifying that the recursive server considers the response authentic. | extended | keyword |  |
+| <a name="dns.flags.checking_disabled"></a>dns.flags.checking_disabled | A DNS flag specifying that the client disables the server signature validation of the query. | extended | keyword |  |
+| <a name="dns.flags.truncated_response"></a>dns.flags.truncated_response | A DNS flag specifying that only the first 512 bytes of the reply were returned. | extended | keyword |  |
+| <a name="dns.response_code"></a>dns.response_code | The DNS status code. | extended | keyword | `NOERROR` |
+| <a name="dns.question.name"></a>dns.question.name | The domain name being queried. If the name field contains non-printable characters (below 32 or above 126), then those characters are represented as escaped base 10 integers (\DDD). Back slashes and quotes are escaped. Tabs, carriage returns, and line feeds are converted to \t, \r, and \n respectively. | core | keyword | `www.google.com.` |
+| <a name="dns.question.type"></a>dns.question.type | The type of records being queried. | core | keyword | `AAAA` |
+| <a name="dns.question.class"></a>dns.question.class | The class of of records being queried. | core | keyword | `IN` |
+| <a name="dns.question.etld_plus_one"></a>dns.question.etld_plus_one | The effective top-level domain (eTLD) plus one more label. For example, the eTLD+1 for "foo.bar.golang.org." is "golang.org.". The data for determining the eTLD comes from an embedded copy of the data from http://publicsuffix.org. | core | keyword | `amazon.co.uk.` |
+| <a name="dns.question.size"></a>dns.question.size | The size of name being queried (in bytes). | extended | keyword |  |
+| <a name="dns.answers_count"></a>dns.answers_count | The number of resource records contained in the `dns.answers` field. | extended | long |  |
+| <a name="dns.answers.name"></a>dns.answers.name | The domain name to which this resource record pertains. | extended | keyword | `example.com.` |
+| <a name="dns.answers.type"></a>dns.answers.type | The type of data contained in this resource record. | extended | keyword | `MX` |
+| <a name="dns.answers.class"></a>dns.answers.class | The class of DNS data contained in this resource record. | extended | keyword | `IN` |
+| <a name="dns.answers.ttl"></a>dns.answers.ttl | The time interval in seconds that this resource record may be cached before it should be discarded. Zero values mean that the data should not be cached. | extended | long |  |
+| <a name="dns.answers.data"></a>dns.answers.data | The data describing the resource. The meaning of this data depends on the type and class of the resource record. | extended | keyword |  |
+| <a name="dns.authorities_count"></a>dns.authorities_count | The number of resource records contained in the `dns.authorities` field. | extended | long |  |
+| <a name="dns.authorities.name"></a>dns.authorities.name | The domain name to which this resource record pertains. | extended | keyword | `example.com.` |
+| <a name="dns.authorities.type"></a>dns.authorities.type | The type of data contained in this resource record. | extended | keyword | `NS` |
+| <a name="dns.authorities.class"></a>dns.authorities.class | The class of DNS data contained in this resource record. | extended | keyword | `IN` |
+| <a name="dns.additionals_count"></a>dns.additionals_count | The number of resource records contained in the `dns.additionals` field. | extended | long |  |
+| <a name="dns.additionals.name"></a>dns.additionals.name | The domain name to which this resource record pertains. | extended | keyword | `example.com.` |
+| <a name="dns.additionals.type"></a>dns.additionals.type | The type of data contained in this resource record. | extended | keyword | `NS` |
+| <a name="dns.additionals.class"></a>dns.additionals.class | The class of DNS data contained in this resource record. | extended | keyword | `IN` |
+| <a name="dns.additionals.ttl"></a>dns.additionals.ttl | The time interval in seconds that this resource record may be cached before it should be discarded. Zero values mean that the data should not be cached. | extended | long |  |
+| <a name="dns.additionals.data"></a>dns.additionals.data | The data describing the resource. The meaning of this data depends on the type and class of the resource record. | extended | keyword |  |
+| <a name="dns.opt.version"></a>dns.opt.version | The EDNS version. | extended | keyword | `0` |
+| <a name="dns.opt.do"></a>dns.opt.do | If set, the transaction uses DNSSEC. | extended | keyword |  |
+| <a name="dns.opt.ext_rcode"></a>dns.opt.ext_rcode | Extended response code field. | extended | keyword | `BADVERS` |
+| <a name="dns.opt.udp_size"></a>dns.opt.udp_size | Requestor's UDP payload size (in bytes). | extended | long |  |
 
 
 ## <a name="ecs"></a> ECS fields

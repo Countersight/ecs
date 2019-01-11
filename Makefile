@@ -75,7 +75,7 @@ generate: csv readme template fields codegen
 # Generate Go code from the schema.
 .PHONY: gocodegen
 gocodegen:
-	find code/go/ecs -name '*.go' -not -name 'doc.go' | xargs rm
+	find code/go/ecs -name '*.go' -not -name 'doc.go' | xargs rm -f
 	cd scripts \
 	  && $(FORCE_GO_MODULES) go run cmd/gocodegen/gocodegen.go \
 	        -version=$(VERSION) \
