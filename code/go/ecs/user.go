@@ -43,4 +43,8 @@ type User struct {
 	// Group the user is a part of. This field can contain a list of groups, if
 	// necessary.
 	Group string `ecs:"group"`
+
+	// If the user takes out an action as another user (such as in sudo), this
+	// field contains the username of the assumed identity.
+	AssumedIdentity string `ecs:"assumed_identity"`
 }

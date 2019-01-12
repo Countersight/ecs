@@ -956,6 +956,10 @@
         },
         "user": {
           "properties": {
+            "assumed_identity": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
             "email": {
               "ignore_above": 1024,
               "type": "keyword"

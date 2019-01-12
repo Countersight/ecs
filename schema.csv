@@ -204,6 +204,7 @@ url.port,integer,extended,443
 url.query,keyword,extended,
 url.scheme,keyword,extended,https
 url.username,keyword,extended,
+user.assumed_identity,keyword,extended,root
 user.email,keyword,extended,
 user.full_name,keyword,extended,Albert Einstein
 user.group,keyword,extended,

@@ -556,6 +556,7 @@ Note also that the `user` fields may be used directly at the top level.
 | <a name="user.email"></a>user.email | User email address. | extended | keyword |  |
 | <a name="user.hash"></a>user.hash | Unique user hash to correlate information for a user in anonymized form.<br/>Useful if `user.id` or `user.name` contain confidential information and cannot be used. | extended | keyword |  |
 | <a name="user.group"></a>user.group | Group the user is a part of. This field can contain a list of groups, if necessary. | extended | keyword |  |
+| <a name="user.assumed_identity"></a>user.assumed_identity | If the user takes out an action as another user (such as in sudo), this field contains the username of the assumed identity. | extended | keyword | `root` |
 
 
 ## <a name="user_agent"></a> User agent fields
