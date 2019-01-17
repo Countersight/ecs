@@ -45,6 +45,7 @@ type User struct {
 	Group string `ecs:"group"`
 
 	// If the user takes out an action as another user (such as in sudo), this
-	// field contains the username of the assumed identity.
+	// field contains the username of the assumed identity. Added by
+	// Countersight 2019-01-12
 	AssumedIdentity string `ecs:"assumed_identity"`
 }
