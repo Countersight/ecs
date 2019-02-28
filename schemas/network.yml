@@ -137,3 +137,10 @@
 
         If `source.packets` and `destination.packets` are known, `network.packets` is their sum.
       example: 24
+
+    - name: traffic_selector
+      level: core
+      type: text
+      description: >
+        The details of the traffic selector use in IKE VPNs.
+      example: 192.168.10.0/24|/0 === 172.16.0.0/16|/0
