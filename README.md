@@ -421,7 +421,7 @@ The network.* fields should be populated with details about the network activity
 | <a name="network.community_id"></a>network.community_id | A hash of source and destination IPs and ports, as well as the protocol used in a communication. This is a tool-agnostic standard to identify flows.<br/>Learn more at https://github.com/corelight/community-id-spec. | extended | keyword | `1:hO+sN4H+MG5MY/8hIrXPqc4ZQz0=` |
 | <a name="network.bytes"></a>network.bytes | Total bytes transferred in both directions.<br/>If `source.bytes` and `destination.bytes` are known, `network.bytes` is their sum. | core | long | `368` |
 | <a name="network.packets"></a>network.packets | Total packets transferred in both directions.<br/>If `source.packets` and `destination.packets` are known, `network.packets` is their sum. | core | long | `24` |
-| <a name="network.traffic_selector"></a>network.traffic_selector | The details of the traffic selector use in IKE VPNs<br/> NB: not yet added to the mapping file. | core | text | `192.168.10.0/24\|/0 === 172.16.0.0/16\|/0` |
+| <a name="network.traffic_selector"></a>network.traffic_selector | The details of the traffic selector use in IKE VPNs. | core | text | `192.168.10.0/24|/0 === 172.16.0.0/16|/0` |
 
 
 ## <a name="observer"></a> Observer fields

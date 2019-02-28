@@ -1691,6 +1691,15 @@ network:
       name: protocol
       short: L7 Network protocol name.
       type: keyword
+    traffic_selector:
+      description: The details of the traffic selector use in IKE VPNs.
+      example: 192.168.10.0/24|/0 === 172.16.0.0/16|/0
+      flat_name: network.traffic_selector
+      level: core
+      name: traffic_selector
+      norms: false
+      short: The details of the traffic selector use in IKE VPNs.
+      type: text
     transport:
       description: 'Same as network.iana_number, but instead using the Keyword name
         of the transport layer (udp, tcp, ipv6-icmp, etc.)

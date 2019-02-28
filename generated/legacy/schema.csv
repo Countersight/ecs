@@ -146,6 +146,7 @@ network.iana_number,keyword,extended,6
 network.name,keyword,extended,Guest Wifi
 network.packets,long,core,24
 network.protocol,keyword,core,http
+network.traffic_selector,text,core,192.168.10.0/24|/0 === 172.16.0.0/16|/0
 network.transport,keyword,core,tcp
 network.type,keyword,core,ipv4
 observer.hostname,keyword,core,

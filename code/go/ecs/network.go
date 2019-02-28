@@ -92,4 +92,7 @@ type Network struct {
 	// If `source.packets` and `destination.packets` are known,
 	// `network.packets` is their sum.
 	Packets int64 `ecs:"packets"`
+
+	// The details of the traffic selector use in IKE VPNs.
+	TrafficSelector string `ecs:"traffic_selector"`
 }

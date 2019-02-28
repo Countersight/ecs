@@ -1616,6 +1616,16 @@
         "required": false, 
         "type": "keyword"
       }, 
+      "network.traffic_selector": {
+        "description": "The details of the traffic selector use in IKE VPNs.", 
+        "example": "192.168.10.0/24|/0 === 172.16.0.0/16|/0", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "core", 
+        "name": "network.traffic_selector", 
+        "required": false, 
+        "type": "text"
+      }, 
       "network.transport": {
         "description": "Same as network.iana_number, but instead using the Keyword name of the transport layer (udp, tcp, ipv6-icmp, etc.)\nThe field value must be normalized to lowercase for querying. See the documentation section \"Implementing ECS\".", 
         "example": "tcp", 
