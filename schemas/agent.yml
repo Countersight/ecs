@@ -39,7 +39,7 @@
       type: keyword
       description: >
         Hostname of the agent.
-
+        Added by Countersight 2018-12-26
       example: host.example.com
 
     - name: type
