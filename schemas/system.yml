@@ -9,7 +9,7 @@
   fields:
 
     - name: temperature.inlet
-      level: core
+      level: extended
       type: integer
       description: >
         The inlet temperature for a server. 
@@ -17,7 +17,7 @@
       example: '33'
 
     - name: temperature.cpu
-      level: core
+      level: extended
       type: keyword
       example: "55"
       description: >

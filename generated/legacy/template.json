@@ -901,6 +901,21 @@
             }
           }
         },
+        "system": {
+          "properties": {
+            "temperature": {
+              "properties": {
+                "cpu": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "inlet": {
+                  "type": "long"
+                }
+              }
+            }
+          }
+        },
         "tags": {
           "ignore_above": 1024,
           "type": "keyword"
