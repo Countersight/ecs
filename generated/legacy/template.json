@@ -154,6 +154,21 @@
             }
           }
         },
+        "countersight": {
+          "properties": {
+            "ingest_time": {
+              "type": "date"
+            },
+            "tags": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "trace": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
+        },
         "destination": {
           "properties": {
             "address": {

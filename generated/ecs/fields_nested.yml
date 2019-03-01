@@ -388,6 +388,46 @@ container:
   short: Fields describing the container that generated this event.
   title: Container
   type: group
+countersight:
+  description: The Countersight fields describe events that have occurred during the
+    ingest into the Countersight system.
+  fields:
+    ingest_time:
+      description: The date and time that this event was processed by the Countersight
+        system
+      flat_name: countersight.ingest_time
+      level: extended
+      name: ingest_time
+      short: The date and time that this event was processed by the Countersight system
+      type: date
+    tags:
+      description: The countersight.tags field contains processing messages, such
+        as when an event  failed to be properly parsed.
+      example: _sshd_grok_fail
+      flat_name: countersight.tags
+      ignore_above: 1024
+      level: extended
+      name: tags
+      short: The countersight.tags field contains processing messages, such as when
+        an event  failed to be properly parsed.
+      type: keyword
+    trace:
+      description: Trace contains a list of processors that have seen this event during
+        ingestion.
+      example: input_beats, save_original, pre_process_beats
+      flat_name: countersight.trace
+      ignore_above: 1024
+      level: extended
+      name: trace
+      short: Trace contains a list of processors that have seen this event during
+        ingestion.
+      type: keyword
+  group: 2
+  name: countersight
+  prefix: countersight.
+  short: Fields that are generated during ingest into the Countersight system.
+  title: Countersight
+  type: group
 destination:
   description: 'Destination fields describe details about the destination of a packet/event.
 

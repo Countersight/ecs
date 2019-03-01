@@ -54,6 +54,7 @@ ECS defines these fields.
  * [Client fields](#client)
  * [Cloud fields](#cloud)
  * [Container fields](#container)
+ * [Countersight fields](#countersight)
  * [Destination fields](#destination)
  * [DNS fields](#dns)
  * [ECS fields](#ecs)
@@ -167,6 +168,18 @@ These fields help correlate data based containers from any runtime.
 | <a name="container.image.tag"></a>container.image.tag | Container image tag. | extended | keyword |  |
 | <a name="container.name"></a>container.name | Container name. | extended | keyword |  |
 | <a name="container.labels"></a>container.labels | Image labels. | extended | object |  |
+
+
+## <a name="countersight"></a> Countersight fields
+
+The Countersight fields describe events that have occurred during the ingest into the Countersight system. 
+
+
+| Field  | Description  | Level  | Type  | Example  |
+|---|---|---|---|---|
+| <a name="countersight.trace"></a>countersight.trace | Trace contains a list of processors that have seen this event during ingestion. | extended | keyword | `input_beats, save_original, pre_process_beats` |
+| <a name="countersight.ingest_time"></a>countersight.ingest_time | The date and time that this event was processed by the Countersight system | extended | date |  |
+| <a name="countersight.tags"></a>countersight.tags | The countersight.tags field contains processing messages, such as when an event  failed to be properly parsed. | extended | keyword | `_sshd_grok_fail` |
 
 
 ## <a name="destination"></a> Destination fields

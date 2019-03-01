@@ -340,6 +340,39 @@
           description: >
             Image labels.
     
+    - name: countersight
+      title: Countersight
+      group: 2
+      short: Fields that are generated during ingest into the Countersight system. 
+      description: >
+        The Countersight fields describe events that have occurred during the ingest
+        into the Countersight system. 
+        
+    
+      type: group
+      fields:
+    
+        - name: trace
+          level: extended
+          type: keyword
+          description: >
+            Trace contains a list of processors that have seen this event during ingestion. 
+          example: input_beats, save_original, pre_process_beats
+    
+        - name: ingest_time
+          level: extended
+          type: date
+          description: >
+            The date and time that this event was processed by the Countersight system
+    
+        - name: tags
+          level: extended
+          type: keyword
+          description: >
+            The countersight.tags field contains processing messages, such as when an event 
+            failed to be properly parsed. 
+          example: _sshd_grok_fail
+    
     - name: destination
       title: Destination
       group: 2
