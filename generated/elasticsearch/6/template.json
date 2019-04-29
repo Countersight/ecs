@@ -223,8 +223,16 @@
         }, 
         "countersight": {
           "properties": {
+            "collector": {
+              "ignore_above": 1024, 
+              "type": "keyword"
+            }, 
             "ingest_time": {
               "type": "date"
+            }, 
+            "pipeline": {
+              "ignore_above": 1024, 
+              "type": "keyword"
             }, 
             "tags": {
               "ignore_above": 1024, 

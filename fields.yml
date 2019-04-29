@@ -352,6 +352,20 @@
       type: group
       fields:
     
+        - name: pipeline
+          level: extended
+          type: keyword
+          description: >
+            The name of the pipeline that received the event. 
+          example: main
+    
+        - name: collector
+          level: extended
+          type: keyword
+          description: >
+            The name and instance of collector that received the event. 
+          example: aws_cloudtrail-01
+    
         - name: trace
           level: extended
           type: keyword

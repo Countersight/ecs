@@ -357,6 +357,16 @@
   "countersight": {
     "description": "The Countersight fields describe events that have occurred during the ingest into the Countersight system. \n", 
     "fields": {
+      "countersight.collector": {
+        "description": "The name and instance of collector that received the event.", 
+        "example": "aws_cloudtrail-01", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "countersight.collector", 
+        "required": false, 
+        "type": "keyword"
+      }, 
       "countersight.ingest_time": {
         "description": "The date and time that this event was processed by the Countersight system", 
         "example": "", 
@@ -366,6 +376,16 @@
         "name": "countersight.ingest_time", 
         "required": false, 
         "type": "date"
+      }, 
+      "countersight.pipeline": {
+        "description": "The name of the pipeline that received the event.", 
+        "example": "main", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "countersight.pipeline", 
+        "required": false, 
+        "type": "keyword"
       }, 
       "countersight.tags": {
         "description": "The countersight.tags field contains processing messages, such as when an event  failed to be properly parsed.", 

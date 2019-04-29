@@ -419,6 +419,15 @@ container.runtime:
   name: runtime
   short: Runtime managing this container.
   type: keyword
+countersight.collector:
+  description: The name and instance of collector that received the event.
+  example: aws_cloudtrail-01
+  flat_name: countersight.collector
+  ignore_above: 1024
+  level: extended
+  name: collector
+  short: The name and instance of collector that received the event.
+  type: keyword
 countersight.ingest_time:
   description: The date and time that this event was processed by the Countersight
     system
@@ -427,6 +436,15 @@ countersight.ingest_time:
   name: ingest_time
   short: The date and time that this event was processed by the Countersight system
   type: date
+countersight.pipeline:
+  description: The name of the pipeline that received the event.
+  example: main
+  flat_name: countersight.pipeline
+  ignore_above: 1024
+  level: extended
+  name: pipeline
+  short: The name of the pipeline that received the event.
+  type: keyword
 countersight.tags:
   description: The countersight.tags field contains processing messages, such as when
     an event  failed to be properly parsed.

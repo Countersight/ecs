@@ -30,7 +30,9 @@ container.image.tag,keyword,extended,
 container.labels,object,extended,
 container.name,keyword,extended,
 container.runtime,keyword,extended,docker
+countersight.collector,keyword,extended,aws_cloudtrail-01
 countersight.ingest_time,date,extended,
+countersight.pipeline,keyword,extended,main
 countersight.tags,keyword,extended,_sshd_grok_fail
 countersight.trace,keyword,extended,"input_beats, save_original, pre_process_beats"
 destination.address,keyword,extended,

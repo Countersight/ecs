@@ -45,7 +45,9 @@ container.image.tag,keyword,extended,,1.0.0-beta2
 container.labels,object,extended,,1.0.0-beta2
 container.name,keyword,extended,,1.0.0-beta2
 container.runtime,keyword,extended,docker,1.0.0-beta2
+countersight.collector,keyword,extended,aws_cloudtrail-01,1.0.0-beta2
 countersight.ingest_time,date,extended,,1.0.0-beta2
+countersight.pipeline,keyword,extended,main,1.0.0-beta2
 countersight.tags,keyword,extended,_sshd_grok_fail,1.0.0-beta2
 countersight.trace,keyword,extended,"input_beats, save_original, pre_process_beats",1.0.0-beta2
 destination.address,keyword,extended,,1.0.0-beta2

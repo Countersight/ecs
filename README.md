@@ -177,6 +177,8 @@ The Countersight fields describe events that have occurred during the ingest int
 
 | Field  | Description  | Level  | Type  | Example  |
 |---|---|---|---|---|
+| <a name="countersight.pipeline"></a>countersight.pipeline | The name of the pipeline that received the event. | extended | keyword | `main` |
+| <a name="countersight.collector"></a>countersight.collector | The name and instance of collector that received the event. | extended | keyword | `aws_cloudtrail-01` |
 | <a name="countersight.trace"></a>countersight.trace | Trace contains a list of processors that have seen this event during ingestion. | extended | keyword | `input_beats, save_original, pre_process_beats` |
 | <a name="countersight.ingest_time"></a>countersight.ingest_time | The date and time that this event was processed by the Countersight system | extended | date |  |
 | <a name="countersight.tags"></a>countersight.tags | The countersight.tags field contains processing messages, such as when an event  failed to be properly parsed. | extended | keyword | `_sshd_grok_fail` |
