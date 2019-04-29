@@ -359,12 +359,19 @@
             The name of the pipeline that received the event. 
           example: main
     
-        - name: collector
+        - name: collector.name
           level: extended
           type: keyword
           description: >
             The name and instance of collector that received the event. 
-          example: aws_cloudtrail-01
+          example: The name provided in the UI for a collector, e.g "my cool collector"
+    
+        - name: collector.type
+          level: extended
+          type: keyword
+          description: >
+            The type of collector that received the event. 
+          example: cloudtrail
     
         - name: trace
           level: extended

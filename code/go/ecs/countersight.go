@@ -30,7 +30,10 @@ type Countersight struct {
 	Pipeline string `ecs:"pipeline"`
 
 	// The name and instance of collector that received the event.
-	Collector string `ecs:"collector"`
+	CollectorName string `ecs:"collector.name"`
+
+	// The type of collector that received the event.
+	CollectorType string `ecs:"collector.type"`
 
 	// Trace contains a list of processors that have seen this event during
 	// ingestion.

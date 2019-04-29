@@ -419,14 +419,23 @@ container.runtime:
   name: runtime
   short: Runtime managing this container.
   type: keyword
-countersight.collector:
+countersight.collector.name:
   description: The name and instance of collector that received the event.
-  example: aws_cloudtrail-01
-  flat_name: countersight.collector
+  example: The name provided in the UI for a collector, e.g "my cool collector"
+  flat_name: countersight.collector.name
   ignore_above: 1024
   level: extended
-  name: collector
+  name: collector.name
   short: The name and instance of collector that received the event.
+  type: keyword
+countersight.collector.type:
+  description: The type of collector that received the event.
+  example: cloudtrail
+  flat_name: countersight.collector.type
+  ignore_above: 1024
+  level: extended
+  name: collector.type
+  short: The type of collector that received the event.
   type: keyword
 countersight.ingest_time:
   description: The date and time that this event was processed by the Countersight

@@ -357,13 +357,23 @@
   "countersight": {
     "description": "The Countersight fields describe events that have occurred during the ingest into the Countersight system. \n", 
     "fields": {
-      "countersight.collector": {
+      "countersight.collector.name": {
         "description": "The name and instance of collector that received the event.", 
-        "example": "aws_cloudtrail-01", 
+        "example": "The name provided in the UI for a collector, e.g \"my cool collector\"", 
         "footnote": "", 
         "group": 2, 
         "level": "extended", 
-        "name": "countersight.collector", 
+        "name": "countersight.collector.name", 
+        "required": false, 
+        "type": "keyword"
+      }, 
+      "countersight.collector.type": {
+        "description": "The type of collector that received the event.", 
+        "example": "cloudtrail", 
+        "footnote": "", 
+        "group": 2, 
+        "level": "extended", 
+        "name": "countersight.collector.type", 
         "required": false, 
         "type": "keyword"
       }, 

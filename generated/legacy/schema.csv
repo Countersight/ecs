@@ -30,7 +30,8 @@ container.image.tag,keyword,extended,
 container.labels,object,extended,
 container.name,keyword,extended,
 container.runtime,keyword,extended,docker
-countersight.collector,keyword,extended,aws_cloudtrail-01
+countersight.collector.name,keyword,extended,"The name provided in the UI for a collector, e.g ""my cool collector"""
+countersight.collector.type,keyword,extended,cloudtrail
 countersight.ingest_time,date,extended,
 countersight.pipeline,keyword,extended,main
 countersight.tags,keyword,extended,_sshd_grok_fail

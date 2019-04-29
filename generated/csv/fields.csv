@@ -45,7 +45,8 @@ container.image.tag,keyword,extended,,1.0.0-beta2
 container.labels,object,extended,,1.0.0-beta2
 container.name,keyword,extended,,1.0.0-beta2
 container.runtime,keyword,extended,docker,1.0.0-beta2
-countersight.collector,keyword,extended,aws_cloudtrail-01,1.0.0-beta2
+countersight.collector.name,keyword,extended,"The name provided in the UI for a collector, e.g ""my cool collector""",1.0.0-beta2
+countersight.collector.type,keyword,extended,cloudtrail,1.0.0-beta2
 countersight.ingest_time,date,extended,,1.0.0-beta2
 countersight.pipeline,keyword,extended,main,1.0.0-beta2
 countersight.tags,keyword,extended,_sshd_grok_fail,1.0.0-beta2
